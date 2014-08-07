@@ -3,7 +3,7 @@
 // @namespace   Qingtian
 // @author   Qingtian
 // @description   ADfilter-Blackscreen
-// @version   1.6.9Beta+2014.07.03pre
+// @version   1.6.9Beta+2014.08.07pre
 // @icon   http://code.google.com/p/qtxmd/logo?cct=1391043764
 // @charset   utf-8
 // @downloadURL   http://qtxmd.googlecode.com/svn/xmlscript/ADfilter-Blackscreen.user.js
@@ -88,7 +88,7 @@
                         'replace': this.players['tudou_olc'] + '?tvcCode=-1&swfPath=' + this.players['tudou_out']
                     },
                     'tudou_out': {
-                        'find': /^http:\/\/www\.tudou\.com\/.*(\/v\.swf)?/i,
+                        'find': /^http:\/\/(www\.)?tudou\.com\/.*(\/v\.swf)?/i,
                         'replace': this.players['tudou_olc'] + '?tvcCode=-1&swfPath=' + this.players['tudou_out']
                     },
                     'tudou_olc_fix': {
@@ -124,11 +124,11 @@
                         'replace': this.players['ku6_out'] + '?vid=$2'
                     },
                     'iqiyi_qiyi': {
-                        'find': /^http:\/\/(www|player|dispatcher)\.(video|.*)\.i?qiyi\.com\/.*\/.*player\.swf/i,
+                        'find': /^http:\/\/(www|player|dispatcher)\.(video|.*)\.i?qiyi\.com\/.*\/.*player.*\.swf/i,
                         'replace': this.players['iqiyi']
                     },
                     'iqiyi': {
-                        'find': /^http:\/\/www\.iqiyi\.com\/player\/\d+\/player\.swf/i,
+                        'find': /^http:\/\/(www\.)?iqiyi\.com\/(player\/\d+\/player|common\/flashplayer\/\d+\/MainPlayer_[^.]*?)\.swf/i,
                         'replace': this.players['iqiyi']
                     },
                     'iqiyi_out': {
@@ -196,19 +196,19 @@
                         'replace': this.players['pplive']
                     },
                     'pps_iqiyi_flv': {
-                        'find': /^http:\/\/www\.iqiyi\.com\/player\/.*\/pps_flvplay_s\.swf?.*v=(\d+)/i,
+                        'find': /^http:\/\/(www\.)?iqiyi\.com\/player\/.*\/pps_flvplay_s\.swf?.*v=(\d+)/i,
                         'replace': this.players['pps_flv'] + '?v=$1'
                     },
                     'pps_iqiyi': {
-                        'find': /^http:\/\/www\.iqiyi\.com\/player\/cupid\/common\/pps_flvplay_s\.swf/i,
+                        'find': /^http:\/\/(www\.)?iqiyi\.com\/player\/cupid\/common\/pps_flvplay_s\.swf/i,
                         'replace': this.players['pps']
                     },
                     'pps_iqiyi_out_sid': {
-                        'find': /^http:\/\/www\.iqiyi\.com\/player\/.*\/pps_fplayer\.swf?.*sid=([\w]{6})[^\/]+/i,
+                        'find': /^http:\/\/(www\.)?iqiyi\.com\/player\/.*\/pps_fplayer\.swf?.*sid=([\w]{6})[^\/]+/i,
                         'replace': this.players['pps_flv'] + '?url_key=$1'
                     },
                     'pps_iqiyi_out': {
-                        'find': /^http:\/\/www\.iqiyi\.com\/player\/cupid\/common\/pps_fplayer\.swf/i,
+                        'find': /^http:\/\/(www\.)?iqiyi\.com\/player\/cupid\/common\/pps_fplayer\.swf/i,
                         'replace': this.players['pps_out']
                     },
                     'pps': {

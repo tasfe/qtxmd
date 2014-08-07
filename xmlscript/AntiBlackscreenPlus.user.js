@@ -52,7 +52,7 @@
 			find: /^http:\/\/js\.tudouui\.com\/.*\/Portalplayer_[\d]{2}\.swf/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/tudou_olc.swf' + '?tvcCode=-1&swfPath=' + 'http://qtxmd.googlecode.com/svn/swfplayer/tudou_out.swf'
 		}, { // tudou_out //tudou反youku跨域,需代理,方式:代理服务v2.tudou.com,端口80,规则v.youku.com/crossdomain.xml //tudou反olc&sp跨域,需代理,方式:代理服务v2.tudou.com,端口80,规则www.tudou.com/crossdomain.xml
-			find: /^http:\/\/www\.tudou\.com\/.*(\/v\.swf)?/i,
+			find: /^http:\/\/(www\.)?tudou\.com\/.*(\/v\.swf)?/i,
 			replace: function(el, find) {
 				var isFF = /firefox/i.test(navigator.userAgent),
 					player = el.data || el.src;
@@ -94,10 +94,10 @@
 			find: /^http:\/\/player\.ku6\.com\/(inside|refer)\/([^\/]+)\/v\.swf.*/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/ku6.swf' + '?vid=$2'
 		}, { // iqiyi_iqiyi //iqiyi反qiyi跨域,需代理,方式:代理服务nl.rcd.iqiyi.com,端口80,规则data.video.qiyi.com/crossdomain.xml规则sf.video.qiyi.com/crossdomain.xml
-			find: /^http:\/\/(www|player|dispatcher)\.(video|.*)\.i?qiyi\.com\/.*\/.*player\.swf/i,
+			find: /^http:\/\/(www|player|dispatcher)\.(video|.*)\.i?qiyi\.com\/.*\/.*player.*\.swf/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/iqiyi.swf'
 		}, { // iqiyi_iqiyi5 //iqiyi反qiyi5跨域,需代理,方式:代理服务nl.rcd.iqiyi.com,端口80,规则data.video.qiyi.com/crossdomain.xml规则sf.video.qiyi.com/crossdomain.xml
-			find: /^http:\/\/www\.iqiyi\.com\/player\/\d+\/player\.swf/i,
+			find: /^http:\/\/(www\.)?iqiyi\.com\/(player\/\d+\/player|common\/flashplayer\/\d+\/MainPlayer_[^.]*?)\.swf/i,
 			replace: function(el, find) {
 				var url = document.querySelector('span[data-flashplayerparam-flashurl]') ? 'http://qtxmd.googlecode.com/svn/swfplayer/iqiyi5.swf' : 'http://qtxmd.googlecode.com/svn/swfplayer/iqiyi.swf';
 				this.Reload.bind(this, el, find, this.host + url)();
@@ -158,16 +158,16 @@
 			find: /^http:\/\/player\.pplive\.cn\/live\/.*\/player4live2\.swf/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/pplive.swf'
 		}, { // pps_iqiyi_flv
-			find: /^http:\/\/www\.iqiyi\.com\/player\/.*\/pps_flvplay_s\.swf?.*v=(\d+)/i,
+			find: /^http:\/\/(www\.)?iqiyi\.com\/player\/.*\/pps_flvplay_s\.swf?.*v=(\d+)/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/flvplay_s.swf' + '?v=$1'
 		}, { // pps_iqiyi
-			find: /^http:\/\/www\.iqiyi\.com\/player\/cupid\/common\/pps_flvplay_s\.swf/i,
+			find: /^http:\/\/(www\.)?iqiyi\.com\/player\/cupid\/common\/pps_flvplay_s\.swf/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/pps.swf'
 		}, { // pps_iqiyi_out_sid //pps反fplayer跨域,需代理,方式:代理服务ipdstat.pps.tv,端口80,规则api.ipd.pps.tv/crossdomain.xml
-			find: /^http:\/\/www\.iqiyi\.com\/player\/.*\/pps_fplayer\.swf?.*sid=([\w]{6})[^\/]+/i,
+			find: /^http:\/\/(www\.)?iqiyi\.com\/player\/.*\/pps_fplayer\.swf?.*sid=([\w]{6})[^\/]+/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/flvplay_s.swf' + '?url_key=$1'
 		}, { // pps_iqiyi_out
-			find: /^http:\/\/www\.iqiyi\.com\/player\/cupid\/common\/pps_fplayer\.swf/i,
+			find: /^http:\/\/(www\.)?iqiyi\.com\/player\/cupid\/common\/pps_fplayer\.swf/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/pps_out.swf'
 		}, { // pps
 			find: /^http:\/\/player\.pps\.tv\/static\/vs\/v.*\/v\/swf\/flvplay_s\.swf/i,
