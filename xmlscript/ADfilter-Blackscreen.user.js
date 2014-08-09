@@ -3,7 +3,7 @@
 // @namespace   Qingtian
 // @author   Qingtian
 // @description   ADfilter-Blackscreen
-// @version   1.6.9Beta+2014.08.07pre
+// @version   1.6.9Beta+2014.08.09pre
 // @icon   http://code.google.com/p/qtxmd/logo?cct=1391043764
 // @charset   utf-8
 // @downloadURL   http://qtxmd.googlecode.com/svn/xmlscript/ADfilter-Blackscreen.user.js
@@ -128,7 +128,7 @@
                         'replace': this.players['iqiyi']
                     },
                     'iqiyi': {
-                        'find': /^http:\/\/(www\.)?iqiyi\.com\/(player\/\d+\/player|common\/flashplayer\/\d+\/MainPlayer_[^.]*?)\.swf/i,
+                        'find': /^http:\/\/(www\.)?iqiyi\.com\/(player\/\d+\/player|common\/flashplayer\/\d+\/(Main)?Player_[^.]*?)\.swf/i,
                         'replace': this.players['iqiyi']
                     },
                     'iqiyi_out': {

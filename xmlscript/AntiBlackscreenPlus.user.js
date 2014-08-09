@@ -97,7 +97,7 @@
 			find: /^http:\/\/(www|player|dispatcher)\.(video|.*)\.i?qiyi\.com\/.*\/.*player.*\.swf/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/iqiyi.swf'
 		}, { // iqiyi_iqiyi5 //iqiyi反qiyi5跨域,需代理,方式:代理服务nl.rcd.iqiyi.com,端口80,规则data.video.qiyi.com/crossdomain.xml规则sf.video.qiyi.com/crossdomain.xml
-			find: /^http:\/\/(www\.)?iqiyi\.com\/(player\/\d+\/player|common\/flashplayer\/\d+\/MainPlayer_[^.]*?)\.swf/i,
+			find: /^http:\/\/(www\.)?iqiyi\.com\/(player\/\d+\/player|common\/flashplayer\/\d+\/(Main)?Player_[^.]*?)\.swf/i,
 			replace: function(el, find) {
 				var url = document.querySelector('span[data-flashplayerparam-flashurl]') ? 'http://qtxmd.googlecode.com/svn/swfplayer/iqiyi5.swf' : 'http://qtxmd.googlecode.com/svn/swfplayer/iqiyi.swf';
 				this.Reload.bind(this, el, find, this.host + url)();
