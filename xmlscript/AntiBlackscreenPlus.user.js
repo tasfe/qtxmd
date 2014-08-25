@@ -213,18 +213,18 @@
 					}.bind(this)
 				});
 			}
-		}, { // sohu_main //sohu直播反live跨域,需代理,方式:代理服务v.aty.sohu.com,端口80,规则live.tv.sohu.com/crossdomain.xml
-			find: /^http:\/\/tv\.sohu\.com\/upload\/swf(\/p2p(\/yc)?)?\/\d+\/Main\.swf/i,
+		}, { // sohu_main //sohu反live跨域,需代理,方式:代理服务v.aty.sohu.com,端口80,规则live.tv.sohu.com/crossdomain.xml
+			find: /^http:\/\/tv\.sohu\.com\/upload\/swf(\/p2p(\/yc)?)?\/(sv)?\d+\/Main\.swf/i,
 			replace: function(el, find) {
-				var url = document.location.host.match(/live.tv.sohu.com/) ? 'http://qtxmd.googlecode.com/svn/swfplayer/sohu.swf' : 'http://qtxmd.googlecode.com/svn/swfplayer/sohu.swf';
+				var url = document.location.host.match(/live.tv.sohu.com/) ? 'http://qtxmd.googlecode.com/svn/swfplayer/sohu.swf' : 'http://qtxmd.googlecode.com/svn/swfplayer/sohu_live.swf';
 				this.Reload.bind(this, el, find, this.host + url)();
 			}
 		}, { // sohu_playershell
-			find: /^http:\/\/tv\.sohu\.com\/upload\/swf(\/p2p(\/yc)?)?\/\d+\/PlayerShell\.swf/i,
+			find: /^http:\/\/tv\.sohu\.com\/upload\/swf(\/p2p(\/yc)?)?\/(sv)?\d+\/PlayerShell\.swf/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/sohu.swf'
 		}, { // sohu_live //sohu直播反live跨域,需代理,方式:代理服务v.aty.sohu.com,端口80,规则live.tv.sohu.com/crossdomain.xml
 			find: /^http:\/\/61\.135\.176\.223:8080\/test\/player\/(Main|PlayerShell)\.swf/i,
-			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/sohu.swf'
+			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/sohu_live.swf'
 		}, { // sohu_out_1
 			find: /^http:\/\/share\.vrs\.sohu\.com\/.*\/v.swf.*(&id=\d+)/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/sohu.swf' + '?vid=$1'

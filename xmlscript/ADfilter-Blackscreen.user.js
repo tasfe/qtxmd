@@ -3,7 +3,7 @@
 // @namespace   Qingtian
 // @author   Qingtian
 // @description   ADfilter-Blackscreen
-// @version   1.6.9Beta+2014.08.09pre
+// @version   1.6.9Beta+2014.08.26pre
 // @icon   http://code.google.com/p/qtxmd/logo?cct=1391043764
 // @charset   utf-8
 // @downloadURL   http://qtxmd.googlecode.com/svn/xmlscript/ADfilter-Blackscreen.user.js
@@ -53,7 +53,8 @@
                     'pps': 'http://qtxmd.googlecode.com/svn/swfplayer/pps.swf',
                     'pps_out': 'http://qtxmd.googlecode.com/svn/swfplayer/pps_out.swf',//pps反sid跨域,需代理,方式:代理服务ipdstat.pps.tv,端口80,规则api.ipd.pps.tv/crossdomain.xml
                     'sina': 'http://qtxmd.googlecode.com/svn/swfplayer/sina.swf',
-                    'sohu': 'http://qtxmd.googlecode.com/svn/swfplayer/sohu.swf',//sohu直播反live跨域,需代理,方式:代理服务v.aty.sohu.com,端口80,规则live.tv.sohu.com/crossdomain.xml
+                    'sohu': 'http://qtxmd.googlecode.com/svn/swfplayer/sohu.swf',
+                    'sohu_live': 'http://qtxmd.googlecode.com/svn/swfplayer/sohu_live.swf',//sohu反live跨域,需代理,方式:代理服务v.aty.sohu.com,端口80,规则live.tv.sohu.com/crossdomain.xml
                     'TencentPlayer': 'http://static.video.qq.com/TencentPlayer.swf',
                     'KKPlayer': 'http://js.kankan.xunlei.com/player/mp4/KKPlayer.swf'
                 };
@@ -252,16 +253,16 @@
                         'replace': this.players['sina'] + '?as=0&actlogActive=1'
                     },
                     'sohu_main': {
-                        'find': /^http:\/\/tv\.sohu\.com\/upload\/swf(\/p2p(\/yc)?)?\/\d+\/Main\.swf/i,
+                        'find': /^http:\/\/tv\.sohu\.com\/upload\/swf(\/p2p(\/yc)?)?\/(sv)?\d+\/Main\.swf/i,
                         'replace': this.players['sohu']
                     },
                     'sohu_playershell': {
-                        'find': /^http:\/\/tv\.sohu\.com\/upload\/swf(\/p2p(\/yc)?)?\/\d+\/PlayerShell\.swf/i,
+                        'find': /^http:\/\/tv\.sohu\.com\/upload\/swf(\/p2p(\/yc)?)?\/(sv)?\d+\/PlayerShell\.swf/i,
                         'replace': this.players['sohu']
                     },
                     'sohu_live': {
                         'find': /^http:\/\/61\.135\.176\.223:8080\/test\/player\/(Main|PlayerShell)\.swf/i,
-                        'replace': this.players['sohu']
+                        'replace': this.players['sohu_live']
                     },
                     'sohu_out_1': {
                         'find': /^http:\/\/share\.vrs\.sohu\.com\/.*\/v.swf.*(&id=\d+)/i,
@@ -341,7 +342,7 @@
             }
             this.rules['sohu_main']['preHandle'] = function(elem, find, replace, player) {
                 if(document.location.host.match(/live.tv.sohu.com/)) {
-                    replace = this.players['sohu'];
+                    replace = this.players['sohu_live'];
                 }
                 this.reallyReplace.bind(this, elem, find, replace)();
             }
