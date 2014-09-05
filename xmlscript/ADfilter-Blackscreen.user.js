@@ -3,7 +3,7 @@
 // @namespace   Qingtian
 // @author   Qingtian
 // @description   ADfilter-Blackscreen
-// @version   1.6.9Beta+2014.08.26pre
+// @version   1.6.9Beta+2014.09.05pre
 // @icon   http://code.google.com/p/qtxmd/logo?cct=1391043764
 // @charset   utf-8
 // @downloadURL   http://qtxmd.googlecode.com/svn/xmlscript/ADfilter-Blackscreen.user.js
@@ -205,7 +205,7 @@
                         'replace': this.players['pps']
                     },
                     'pps_iqiyi_out_sid': {
-                        'find': /^http:\/\/(www\.)?iqiyi\.com\/player\/.*\/pps_fplayer\.swf?.*sid=([\w]{6})[^\/]+/i,
+                        'find': /^http:\/\/(www\.)?iqiyi\.com\/player\/.*\/pps_fplayer\.swf?.*sid=([\w]{6})([^\/]+)?/i,
                         'replace': this.players['pps_flv'] + '?url_key=$1'
                     },
                     'pps_iqiyi_out': {
@@ -217,7 +217,7 @@
                         'replace': this.players['pps']
                     },
                     'pps_out_sid': {
-                        'find': /^http:\/\/player\.pps\.tv\/.*\/swf\/fplayer\.swf?.*sid=([\w]{6})[^\/]+/i,
+                        'find': /^http:\/\/player\.pps\.tv\/.*\/swf\/fplayer\.swf?.*sid=([\w]{6})([^\/]+)?/i,
                         'replace': this.players['pps_flv'] + '?url_key=$1'
                     },
                     'pps_out': {
@@ -225,7 +225,7 @@
                         'replace': this.players['pps_out']
                     },
                     'pps_sid': {
-                        'find': /^http:\/\/player\.pps\.tv\/player\/sid\/([\w]{6})[^\/]+\/v\.swf/i,
+                        'find': /^http:\/\/player\.pps\.tv\/player\/sid\/([\w]{6})([^\/]+)?\/v\.swf/i,
                         'replace': this.players['pps_flv'] + '?url_key=$1'
                     },
                     'sina_old-to-new_vid': {

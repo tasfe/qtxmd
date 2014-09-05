@@ -164,7 +164,7 @@
 			find: /^http:\/\/(www\.)?iqiyi\.com\/player\/cupid\/common\/pps_flvplay_s\.swf/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/pps.swf'
 		}, { // pps_iqiyi_out_sid //pps反fplayer跨域,需代理,方式:代理服务ipdstat.pps.tv,端口80,规则api.ipd.pps.tv/crossdomain.xml
-			find: /^http:\/\/(www\.)?iqiyi\.com\/player\/.*\/pps_fplayer\.swf?.*sid=([\w]{6})[^\/]+/i,
+			find: /^http:\/\/(www\.)?iqiyi\.com\/player\/.*\/pps_fplayer\.swf?.*sid=([\w]{6})([^\/]+)?/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/flvplay_s.swf' + '?url_key=$1'
 		}, { // pps_iqiyi_out
 			find: /^http:\/\/(www\.)?iqiyi\.com\/player\/cupid\/common\/pps_fplayer\.swf/i,
@@ -173,13 +173,13 @@
 			find: /^http:\/\/player\.pps\.tv\/static\/vs\/v.*\/v\/swf\/flvplay_s\.swf/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/pps.swf'
 		}, { // pps_out_sid //pps反fplayer跨域,需代理,方式:代理服务ipdstat.pps.tv,端口80,规则api.ipd.pps.tv/crossdomain.xml
-			find: /^http:\/\/player\.pps\.tv\/.*\/swf\/fplayer\.swf?.*sid=([\w]{6})[^\/]+/i,
+			find: /^http:\/\/player\.pps\.tv\/.*\/swf\/fplayer\.swf?.*sid=([\w]{6})([^\/]+)?/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/flvplay_s.swf' + '?url_key=$1'
 		}, { // pps_out
 			find: /^http:\/\/player\.pps\.tv\/static\/v.*\/v\/swf\/fplayer\.swf/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/pps_out.swf'
 		}, { // pps_sid //pps反sid跨域,需代理,方式:代理服务ipdstat.pps.tv,端口80,规则api.ipd.pps.tv/crossdomain.xml
-			find: /^http:\/\/player\.pps\.tv\/player\/sid\/([\w]{6})[^\/]+\/v\.swf/i,
+			find: /^http:\/\/player\.pps\.tv\/player\/sid\/([\w]{6})([^\/]+)?\/v\.swf/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/flvplay_s.swf' + '?url_key=$1'
 		}, { // sina_old-to-new_vid
 			find: /^http:\/\/p\.you\.video\.sina\.com\.cn\/(player|swf)\/.*Player.*\.swf?.*(vid|vids)=(\d+)/i,
