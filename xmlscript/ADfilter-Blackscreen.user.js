@@ -3,7 +3,7 @@
 // @namespace   Qingtian
 // @author   Qingtian
 // @description   ADfilter-Blackscreen
-// @version   1.6.9Beta+2014.09.05pre
+// @version   1.7.0Beta+2014.09.20pre
 // @icon   http://code.google.com/p/qtxmd/logo?cct=1391043764
 // @charset   utf-8
 // @downloadURL   http://qtxmd.googlecode.com/svn/xmlscript/ADfilter-Blackscreen.user.js
@@ -259,6 +259,10 @@
                     'sohu_playershell': {
                         'find': /^http:\/\/tv\.sohu\.com\/upload\/swf(\/p2p(\/yc)?)?\/(sv)?\d+\/PlayerShell\.swf/i,
                         'replace': this.players['sohu']
+                    },
+                    'sohu_webplayer': {
+                        'find': /^http:\/\/220\.181\.90\.161\/webplayer\/(Main|PlayerShell)\.swf/i,
+                        'replace': this.players['sohu_live']
                     },
                     'sohu_live': {
                         'find': /^http:\/\/61\.135\.176\.223:8080\/test\/player\/(Main|PlayerShell)\.swf/i,

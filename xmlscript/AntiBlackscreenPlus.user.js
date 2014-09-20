@@ -222,6 +222,9 @@
 		}, { // sohu_playershell
 			find: /^http:\/\/tv\.sohu\.com\/upload\/swf(\/p2p(\/yc)?)?\/(sv)?\d+\/PlayerShell\.swf/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/sohu.swf'
+		}, { // sohu_webplayer
+			find: /^http:\/\/220\.181\.90\.161\/webplayer\/(Main|PlayerShell)\.swf/i,
+			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/sohu_live.swf'
 		}, { // sohu_live //sohu直播反live跨域,需代理,方式:代理服务v.aty.sohu.com,端口80,规则live.tv.sohu.com/crossdomain.xml
 			find: /^http:\/\/61\.135\.176\.223:8080\/test\/player\/(Main|PlayerShell)\.swf/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/sohu_live.swf'
