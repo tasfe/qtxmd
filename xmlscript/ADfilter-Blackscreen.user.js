@@ -3,7 +3,7 @@
 // @namespace   Qingtian
 // @author   Qingtian
 // @description   ADfilter-Blackscreen
-// @version   1.7.0Beta+2014.09.20pre
+// @version   1.7.0Beta+2014.09.25pre
 // @icon   http://code.google.com/p/qtxmd/logo?cct=1391043764
 // @charset   utf-8
 // @downloadURL   http://qtxmd.googlecode.com/svn/xmlscript/ADfilter-Blackscreen.user.js
@@ -141,7 +141,7 @@
                         'replace': this.players['letv'] + '$1' + '$2'
                     },
                     'letv_letv': {
-                        'find': /^http:\/\/.*letv[\w]*\.com\/.*\/(?!(Live|seed))((S[\w]{2,3})?(?!Live)[\w]{4}|swf)Player[^\.]*\.swf/i,
+                        'find': /^http:\/\/.*letv[\w]*\.com\/.*\/(?!(Live|seed|Disk))(((C|S)[\w]{2,3})?(?!Live)[\w]{4}|swf)Player[^\.]*\.swf/i,
                         'replace': this.players['letv']
                     },
                     'letv_barrage': {

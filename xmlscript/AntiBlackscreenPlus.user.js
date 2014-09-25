@@ -116,7 +116,7 @@
 			find: /^http:\/\/.*letv[\w]*\.com\/.*\/newplayer\/.*Player[^\.]*\.swf(\?[^\/]+)&pccsUrl=http:\/\/www\.letv\.com\/.*\/pccs_.*.xml([^\/]+)/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/letv.swf' + '$1' + '$2'
 		}, { // letv_letv
-			find: /^http:\/\/.*letv[\w]*\.com\/.*\/(?!(Live|seed))((S[\w]{2,3})?(?!Live)[\w]{4}|swf)Player[^\.]*\.swf/i,
+			find: /^http:\/\/.*letv[\w]*\.com\/.*\/(?!(Live|seed|Disk))(((C|S)[\w]{2,3})?(?!Live)[\w]{4}|swf)Player[^\.]*\.swf/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/letv.swf'
 		}, { // letv_barrage
 			find: /^http:\/\/.*letv[\w]*\.com\/.*\/(acfunletv|letv-wrapper|letvbili|lbplayer)[^\.]*\.swf/i,
