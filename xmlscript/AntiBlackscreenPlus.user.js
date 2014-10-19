@@ -112,6 +112,9 @@
 
 				this.Reload.bind(this, el, find, this.host + url)();
 			}
+		}, { // iqiyi_pps
+			find: /^http:\/\/www\.iqiyi\.com\/common\/flashplayer\/\d+\/PPSMainPlayer_[^.]*?\.swf/i,
+			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/iqiyi.swf'
 		}, { // letv_pccs
 			find: /^http:\/\/.*letv[\w]*\.com\/.*\/newplayer\/.*Player[^\.]*\.swf(\?[^\/]+)&pccsUrl=http:\/\/www\.letv\.com\/.*\/pccs_.*.xml([^\/]+)/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/letv.swf' + '$1' + '$2'

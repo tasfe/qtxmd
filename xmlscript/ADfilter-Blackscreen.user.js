@@ -137,6 +137,10 @@
                         'find': /^http:\/\/(player|dispatcher)\.video\.i?qiyi\.com\/(.*[\?&]vid=)?([^\/&]+).*/i,
                         'replace': this.players['iqiyi_out'] + '?vid=$3'
                     },
+                    'iqiyi_pps': {
+                        'find': /^http:\/\/www\.iqiyi\.com\/common\/flashplayer\/\d+\/PPSMainPlayer_[^.]*?\.swf/i,
+                        'replace': this.players['iqiyi']
+                    },
                     'letv_pccs': {
                         'find': /^http:\/\/.*letv[\w]*\.com\/.*\/newplayer\/.*Player[^\.]*\.swf(\?[^\/]+)&pccsUrl=http:\/\/www\.letv\.com\/.*\/pccs_.*.xml([^\/]+)/i,
                         'replace': this.players['letv'] + '$1' + '$2'
