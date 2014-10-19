@@ -151,6 +151,9 @@
 		}, { // letv_3
 			find: /^http:\/\/player\.hz\.letv\.com\/hzplayer\.swf\/.*v_list=[^\.]*/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/letv.swf'
+		}, { // letv_live
+			find: /^http:\/\/player\.hz\.letv\.com\/live.swf|.*letv[\w]*\.com\/.*\/[\w]LivePlayer[^\.]*\.swf/i,
+			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/letv_live.swf'
 		}, { // pptv
 			find: /^http:\/\/player\.pplive\.cn\/ikan\/.*\/player4player2\.swf/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/pptv.swf'

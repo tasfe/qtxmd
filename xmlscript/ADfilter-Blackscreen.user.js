@@ -3,7 +3,7 @@
 // @namespace   Qingtian
 // @author   Qingtian
 // @description   ADfilter-Blackscreen
-// @version   1.7.0Beta+2014.09.25pre
+// @version   1.7.0Beta+2014.10.20pre
 // @icon   http://code.google.com/p/qtxmd/logo?cct=1391043764
 // @charset   utf-8
 // @downloadURL   http://qtxmd.googlecode.com/svn/xmlscript/ADfilter-Blackscreen.user.js
@@ -47,6 +47,7 @@
                     'iqiyi_out': 'http://qtxmd.googlecode.com/svn/swfplayer/iqiyi_out.swf',//iqiyi反out跨域,需代理,方式:代理服务nl.rcd.iqiyi.com,端口80,规则data.video.qiyi.com/crossdomain.xml规则sf.video.qiyi.com/crossdomain.xml
                     'letv': 'http://qtxmd.googlecode.com/svn/swfplayer/letv.swf',
                     'letvsdk': 'http://qtxmd.googlecode.com/svn/swfplayer/letvsdk.swf',
+                    'letv_live': 'http://qtxmd.googlecode.com/svn/swfplayer/letv_live.swf',
                     'pptv': 'http://qtxmd.googlecode.com/svn/swfplayer/pptv.swf',
                     'pplive': 'http://qtxmd.googlecode.com/svn/swfplayer/pplive.swf',
                     'pps_flv': 'http://qtxmd.googlecode.com/svn/swfplayer/flvplay_s.swf',//pps反fplayer跨域,需代理,方式:代理服务ipdstat.pps.tv,端口80,规则api.ipd.pps.tv/crossdomain.xml
@@ -187,6 +188,10 @@
                     'letv_3': {
                         'find': /^http:\/\/player\.hz\.letv\.com\/hzplayer\.swf\/.*v_list=[^\.]*/i,
                         'replace': this.players['letv']
+                    },
+                    'letv_live': {
+                        'find': /^http:\/\/player\.hz\.letv\.com\/live.swf|.*letv[\w]*\.com\/.*\/[\w]LivePlayer[^\.]*\.swf/i,
+                        'replace': this.players['letv_live']
                     },
                     'pptv': {
                         'find': /^http:\/\/player\.pplive\.cn\/ikan\/.*\/player4player2\.swf/i,
