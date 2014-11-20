@@ -240,6 +240,9 @@
 		}, { // sohu_out_2
 			find: /^http:\/\/share\.vrs\.sohu\.com\/(\d+)\/v\.swf/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/sohu.swf' + '?vid=$1'
+		}, { // sohu_out_3
+			find: /^http:\/\/share\.vrs\.sohu\.com\/share\/play\/space\/\d+\/(\d+)\/.*\/v.swf/i,
+			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/sohu.swf' + '?vid=&id=$1'
 		}, { // TencentPlayer_to_fix
 			find: /^http:\/\/mat1\.qq\.com\/news\/act3\/js\/QQPlayer[^.]*?\.swf/i,
 			replace: 'http://static.video.qq.com/TencentPlayer.swf'
