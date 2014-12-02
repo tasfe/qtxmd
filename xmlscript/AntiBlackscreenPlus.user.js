@@ -143,7 +143,7 @@
 			find: /^http:\/\/.*letv[\w]*\.com\/player\/swfplayer\.swf(\?.*)/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/letv.swf' + '$1'
 		}, { // letv_yuntv
-			find: /^http:\/\/yuntv\.letv\.com\/bcloud\.swf/i,
+			find: /^http:\/\/yuntv\.letv\.com\/bcloud\.swf|.*letv[\w]*\.com\/p\/.*\/newplayer\/bcloud\.swf/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/letvsdk.swf'
 		}, { // letv_1
 			find: /^http:\/\/.*letv[\w]*\.com\/.*player[^\.]*\.swf\?v_list=[^\.]*/i,

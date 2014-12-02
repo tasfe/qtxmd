@@ -3,7 +3,7 @@
 // @namespace   Qingtian
 // @author   Qingtian
 // @description   ADfilter-Blackscreen
-// @version   1.7.0Beta+2014.11.24pre
+// @version   1.7.0Beta+2014.12.02pre
 // @icon   http://code.google.com/p/qtxmd/logo?cct=1391043764
 // @charset   utf-8
 // @downloadURL   http://qtxmd.googlecode.com/svn/xmlscript/ADfilter-Blackscreen.user.js
@@ -178,7 +178,7 @@
                         'replace': this.players['letv'] + '$1'
                     },
                     'letv_yuntv': {
-                        'find': /^http:\/\/yuntv\.letv\.com\/bcloud\.swf/i,
+                        'find': /^http:\/\/yuntv\.letv\.com\/bcloud\.swf|.*letv[\w]*\.com\/p\/.*\/newplayer\/bcloud\.swf/i,
                         'replace': this.players['letvsdk']
                     },
                     'letv_1': {
