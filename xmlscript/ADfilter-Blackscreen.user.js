@@ -3,7 +3,7 @@
 // @namespace   Qingtian
 // @author   Qingtian
 // @description   ADfilter-Blackscreen
-// @version   1.7.0Beta+2014.12.02pre
+// @version   1.7.1Beta+2015.01.12pre
 // @icon   http://code.google.com/p/qtxmd/logo?cct=1391043764
 // @charset   utf-8
 // @downloadURL   http://qtxmd.googlecode.com/svn/xmlscript/ADfilter-Blackscreen.user.js
@@ -94,12 +94,12 @@
                         'replace': this.players['tudou_olc'] + '?tvcCode=-1&swfPath=' + this.players['tudou_out']
                     },
                     'tudou_olc_fix': {
-                        'find': /^http:\/\/js\.tudouui\.com\/bin\/.*player[^\.]*\/olc_[^.]*?\.swf/i,
-                        'replace': this.players['tudou_out'] + '?tvcCode=-1&swfPath=' + this.players['tudou_olc']
+                        'find': /^http:\/\/js\.tudouui\.com\/bin\/.*player[^\.]*\/olc_[^.]*?\.swf.*\?(iid=\d+)/i,
+                        'replace': this.players['tudou_out'] + '?tvcCode=-1&swfPath=' + this.players['tudou_olc'] + '&$1'
                     },
                     'tudou_socialplayer_fix': {
-                        'find': /^http:\/\/js\.tudouui\.com\/bin\/.*SocialPlayer_[^.]*?\.swf/i,
-                        'replace': this.players['tudou_out'] + '?tvcCode=-1&swfPath=' + this.players['tudou_sp']
+                        'find': /^http:\/\/js\.tudouui\.com\/bin\/.*SocialPlayer_[^.]*?\.swf.*\?(iid=\d+)/i,
+                        'replace': this.players['tudou_out'] + '?tvcCode=-1&swfPath=' + this.players['tudou_sp'] + '&$1'
                     },
                     'tudou_nplayer_1': {
                         'find': /^http:\/\/dp\.tudou\.com\/.*nplayer[^.]*?\.swf/i,

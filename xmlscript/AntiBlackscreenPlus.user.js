@@ -70,11 +70,11 @@
 				});
 			}
 		}, { // tudou_olc_fix //tudou反olc跨域,需代理,方式:代理服务v2.tudou.com,端口80,规则www.tudou.com/crossdomain.xml
-			find: /^http:\/\/js\.tudouui\.com\/bin\/.*player[^\.]*\/olc_[^.]*?\.swf/i,
-			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/tudou_out.swf' + '?tvcCode=-1&swfPath=' + 'http://qtxmd.googlecode.com/svn/swfplayer/tudou_olc.swf'
+			find: /^http:\/\/js\.tudouui\.com\/bin\/.*player[^\.]*\/olc_[^.]*?\.swf.*\?(iid=\d+)/i,
+			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/tudou_out.swf' + '?tvcCode=-1&swfPath=' + 'http://qtxmd.googlecode.com/svn/swfplayer/tudou_olc.swf' + '&$1'
 		}, { // tudou_socialplayer_fix //tudou反sp跨域,需代理,方式:代理服务v2.tudou.com,端口80,规则www.tudou.com/crossdomain.xml
-			find: /^http:\/\/js\.tudouui\.com\/bin\/.*SocialPlayer_[^.]*?\.swf/i,
-			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/tudou_out.swf' + '?tvcCode=-1&swfPath=' + 'http://qtxmd.googlecode.com/svn/swfplayer/tudou_sp.swf'
+			find: /^http:\/\/js\.tudouui\.com\/bin\/.*SocialPlayer_[^.]*?\.swf.*\?(iid=\d+)/i,
+			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/tudou_out.swf' + '?tvcCode=-1&swfPath=' + 'http://qtxmd.googlecode.com/svn/swfplayer/tudou_sp.swf' + '&$1'
 		}, { // tudou_nplayer_1 //tudou反olc&sp跨域,需代理,方式:代理服务v2.tudou.com,端口80,规则www.tudou.com/crossdomain.xml
 			find: /^http:\/\/dp\.tudou\.com\/.*nplayer[^.]*?\.swf/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/tudou_olc.swf' + '?tvcCode=-1&swfPath=' + 'http://qtxmd.googlecode.com/svn/swfplayer/tudou_sp.swf'
