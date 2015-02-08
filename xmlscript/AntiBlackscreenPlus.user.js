@@ -191,7 +191,7 @@
 			find: /^http:\/\/p\.you\.video\.sina\.com\.cn\/(player|swf)\/.*Player.*\.swf?.*(vid|vids)=(\d+)/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/sina.swf' + '?as=0&vid=$3'
 		}, { // sina_old-to-new_1
-			find: /^http:\/\/p\.you\.video\.sina\.com\.cn\/(player|swf)\/.*Player(2013|2012|2011|2010)[^.]*?\.swf/i,
+			find: /^http:\/\/p\.you\.video\.sina\.com\.cn\/(player|swf)\/.*Player(2014|2013|2012|2011|2010)[^.]*?\.swf/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/sina.swf' + '?as=0'
 		}, { // sina_old-to-new_2
 			find: /^http:\/\/p\.you\.video\.sina\.com\.cn\/(player|swf)\/(?!focus).*player\.swf/i,

@@ -3,7 +3,7 @@
 // @namespace   Qingtian
 // @author   Qingtian
 // @description   SwfaccAdkillVideoAntiblack
-// @version   2.0.0Nightly+2015.02.08pre
+// @version   2.0.0Nightly+2015.02.09pre
 // @icon   http://code.google.com/p/qtxmd/logo?cct=1391043764
 // @charset   utf-8
 // @downloadURL   http://qtxmd.googlecode.com/svn/SwfaccAdkillVideoAntiblack.user.js
@@ -242,7 +242,7 @@
                         'replace': this.players['sina'] + '?as=0&vid=$3'
                     },
                     'sina_old-to-new_1': {
-                        'find': /^http:\/\/p\.you\.video\.sina\.com\.cn\/(player|swf)\/.*Player(2013|2012|2011|2010)[^.]*?\.swf/i,
+                        'find': /^http:\/\/p\.you\.video\.sina\.com\.cn\/(player|swf)\/.*Player(2014|2013|2012|2011|2010)[^.]*?\.swf/i,
                         'replace': this.players['sina'] + '?as=0'
                     },
                     'sina_old-to-new_2': {
@@ -673,7 +673,7 @@ setTimeout(function () {
 			find: /^http:\/\/p\.you\.video\.sina\.com\.cn\/(player|swf)\/.*Player.*\.swf?.*(vid|vids)=(\d+)/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/sina.swf' + '?as=0&vid=$3'
 		}, { // sina_old-to-new_1
-			find: /^http:\/\/p\.you\.video\.sina\.com\.cn\/(player|swf)\/.*Player(2013|2012|2011|2010)[^.]*?\.swf/i,
+			find: /^http:\/\/p\.you\.video\.sina\.com\.cn\/(player|swf)\/.*Player(2014|2013|2012|2011|2010)[^.]*?\.swf/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/sina.swf' + '?as=0'
 		}, { // sina_old-to-new_2
 			find: /^http:\/\/p\.you\.video\.sina\.com\.cn\/(player|swf)\/(?!focus).*player\.swf/i,
