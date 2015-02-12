@@ -3,7 +3,7 @@
 // @namespace   Qingtian
 // @author   Qingtian
 // @description   SwfaccAdkillVideoAntiblack
-// @version   2.0.0Nightly+2015.02.12pre
+// @version   2.0.0Nightly+2015.02.16pre
 // @icon   http://code.google.com/p/qtxmd/logo?cct=1391043764
 // @charset   utf-8
 // @downloadURL   http://qtxmd.googlecode.com/svn/SwfaccAdkillVideoAntiblack.user.js
@@ -125,11 +125,15 @@
                         'find': /^http:\/\/player\.ku6\.com\/(inside|refer)\/([^\/]+)\/v\.swf.*/i,
                         'replace': this.players['ku6_out'] + '?vid=$2'
                     },
+                    'iqiyi_ID': {
+                        'find': /^http:\/\/(www|player|dispatcher)\.(video\.)?i?qiyi\.com\/.*player.*\.swf?.*definitionID=([^\/&]+[^.]*?)/i,
+                        'replace': this.players['iqiyi_out'] + '?vid=$3'
+                    },
                     'iqiyi_qiyi': {
                         'find': /^http:\/\/(www|player|dispatcher)\.(video|.*)\.i?qiyi\.com\/.*\/.*player.*\.swf/i,
                         'replace': this.players['iqiyi']
                     },
-                    'iqiyi': {
+                    'iqiyi_iqiyi5': {
                         'find': /^http:\/\/(www\.)?iqiyi\.com\/(player\/\d+\/player|common\/flashplayer\/\d+\/(Main)?Player_[^.]*?)\.swf/i,
                         'replace': this.players['iqiyi']
                     },
@@ -316,7 +320,7 @@
             return this._done;
         },
         initPreHandlers: function() {
-            this.rules['iqiyi']['preHandle'] = function(elem, find, replace, player) {
+            this.rules['iqiyi_iqiyi5']['preHandle'] = function(elem, find, replace, player) {
                 if(document.querySelector('span[data-flashplayerparam-flashurl]')) {
                     replace = this.players['iqiyi5'];
                 }
@@ -579,7 +583,10 @@ setTimeout(function () {
 		}, { // ku6_out
 			find: /^http:\/\/player\.ku6\.com\/(inside|refer)\/([^\/]+)\/v\.swf.*/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/ku6.swf' + '?vid=$2'
-		}, { // iqiyi_iqiyi //iqiyi反qiyi跨域,需代理,方式:代理服务nl.rcd.iqiyi.com,端口80,规则data.video.qiyi.com/crossdomain.xml规则sf.video.qiyi.com/crossdomain.xml
+		}, { // iqiyi_ID //iqiyi反out跨域,需代理,方式:代理服务nl.rcd.iqiyi.com,端口80,规则data.video.qiyi.com/crossdomain.xml规则sf.video.qiyi.com/crossdomain.xml
+			find: /^http:\/\/(www|player|dispatcher)\.(video\.)?i?qiyi\.com\/.*player.*\.swf?.*definitionID=([^\/&]+[^.]*?)/i,
+			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/iqiyi_out.swf' + '?vid=$3'
+		}, { // iqiyi_qiyi //iqiyi反qiyi跨域,需代理,方式:代理服务nl.rcd.iqiyi.com,端口80,规则data.video.qiyi.com/crossdomain.xml规则sf.video.qiyi.com/crossdomain.xml
 			find: /^http:\/\/(www|player|dispatcher)\.(video|.*)\.i?qiyi\.com\/.*\/.*player.*\.swf/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/iqiyi.swf'
 		}, { // iqiyi_iqiyi5 //iqiyi反qiyi5跨域,需代理,方式:代理服务nl.rcd.iqiyi.com,端口80,规则data.video.qiyi.com/crossdomain.xml规则sf.video.qiyi.com/crossdomain.xml

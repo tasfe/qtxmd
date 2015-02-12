@@ -93,7 +93,10 @@
 		}, { // ku6_out
 			find: /^http:\/\/player\.ku6\.com\/(inside|refer)\/([^\/]+)\/v\.swf.*/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/ku6.swf' + '?vid=$2'
-		}, { // iqiyi_iqiyi //iqiyi反qiyi跨域,需代理,方式:代理服务nl.rcd.iqiyi.com,端口80,规则data.video.qiyi.com/crossdomain.xml规则sf.video.qiyi.com/crossdomain.xml
+		}, { // iqiyi_ID //iqiyi反out跨域,需代理,方式:代理服务nl.rcd.iqiyi.com,端口80,规则data.video.qiyi.com/crossdomain.xml规则sf.video.qiyi.com/crossdomain.xml
+			find: /^http:\/\/(www|player|dispatcher)\.(video\.)?i?qiyi\.com\/.*player.*\.swf?.*definitionID=([^\/&]+[^.]*?)/i,
+			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/iqiyi_out.swf' + '?vid=$3'
+		}, { // iqiyi_qiyi //iqiyi反qiyi跨域,需代理,方式:代理服务nl.rcd.iqiyi.com,端口80,规则data.video.qiyi.com/crossdomain.xml规则sf.video.qiyi.com/crossdomain.xml
 			find: /^http:\/\/(www|player|dispatcher)\.(video|.*)\.i?qiyi\.com\/.*\/.*player.*\.swf/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/iqiyi.swf'
 		}, { // iqiyi_iqiyi5 //iqiyi反qiyi5跨域,需代理,方式:代理服务nl.rcd.iqiyi.com,端口80,规则data.video.qiyi.com/crossdomain.xml规则sf.video.qiyi.com/crossdomain.xml

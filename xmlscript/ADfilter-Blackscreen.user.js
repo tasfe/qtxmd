@@ -3,7 +3,7 @@
 // @namespace   Qingtian
 // @author   Qingtian
 // @description   ADfilter-Blackscreen
-// @version   1.7.1Beta+2015.02.11pre
+// @version   1.7.1Beta+2015.02.13pre
 // @icon   http://code.google.com/p/qtxmd/logo?cct=1391043764
 // @charset   utf-8
 // @downloadURL   http://qtxmd.googlecode.com/svn/xmlscript/ADfilter-Blackscreen.user.js
@@ -125,11 +125,15 @@
                         'find': /^http:\/\/player\.ku6\.com\/(inside|refer)\/([^\/]+)\/v\.swf.*/i,
                         'replace': this.players['ku6_out'] + '?vid=$2'
                     },
+                    'iqiyi_ID': {
+                        'find': /^http:\/\/(www|player|dispatcher)\.(video\.)?i?qiyi\.com\/.*player.*\.swf?.*definitionID=([^\/&]+[^.]*?)/i,
+                        'replace': this.players['iqiyi_out'] + '?vid=$3'
+                    },
                     'iqiyi_qiyi': {
                         'find': /^http:\/\/(www|player|dispatcher)\.(video|.*)\.i?qiyi\.com\/.*\/.*player.*\.swf/i,
                         'replace': this.players['iqiyi']
                     },
-                    'iqiyi': {
+                    'iqiyi_iqiyi5': {
                         'find': /^http:\/\/(www\.)?iqiyi\.com\/(player\/\d+\/player|common\/flashplayer\/\d+\/(Main)?Player_[^.]*?)\.swf/i,
                         'replace': this.players['iqiyi']
                     },
@@ -316,7 +320,7 @@
             return this._done;
         },
         initPreHandlers: function() {
-            this.rules['iqiyi']['preHandle'] = function(elem, find, replace, player) {
+            this.rules['iqiyi_iqiyi5']['preHandle'] = function(elem, find, replace, player) {
                 if(document.querySelector('span[data-flashplayerparam-flashurl]')) {
                     replace = this.players['iqiyi5'];
                 }
