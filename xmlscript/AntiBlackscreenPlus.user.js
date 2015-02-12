@@ -112,6 +112,9 @@
 
 				this.Reload.bind(this, el, find, this.host + url)();
 			}
+		}, { // iqiyi_duapp
+			find: /^http:\/\/moedao\.duapp\.com\/i\/(.*[\?&]vid=)?([^\/&]+)\.swf/i,
+			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/iqiyi.swf' + '?vid=$1' + '$2'
 		}, { // iqiyi_pps
 			find: /^http:\/\/www\.iqiyi\.com\/common\/flashplayer\/\d+\/PPSMainPlayer_[^.]*?\.swf/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/iqiyi.swf'
@@ -250,8 +253,8 @@
 			find: /^http:\/\/cache\.tv\.qq\.com\/QQPlayer\.swf/i,
 			replace: 'http://static.video.qq.com/TencentPlayer.swf'
 		}, { // KKPlayer_to_HD
-			find: /^http:\/\/js\.kankan\.xunlei\.com\/player\/mp4\/KKPlayer2\.[\d]\.swf/i,
-			replace: 'http://js.kankan.xunlei.com/player/mp4/KKPlayer.swf'
+			find: /^http:\/\/js\.kankan\.xunlei\.com\/player\/mp4\/KKPlayer2\.(?!0)[\d]\.swf/i,
+			replace: 'http://js.kankan.xunlei.com/player/mp4/KKPlayer2.0.swf'
 		}],
 
 		style: 'object,embed{-webkit-animation-duration:.001s;-webkit-animation-name:playerInserted;-ms-animation-duration:.001s;-ms-animation-name:playerInserted;-o-animation-duration:.001s;-o-animation-name:playerInserted;animation-duration:.001s;animation-name:playerInserted;}@-webkit-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}@-ms-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}@-o-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}@keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}',
