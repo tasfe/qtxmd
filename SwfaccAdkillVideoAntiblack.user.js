@@ -282,7 +282,7 @@
                         'replace': this.players['sohu_live']
                     },
                     'sohu_live': {
-                        'find': /^http:\/\/61\.135\.176\.223:8080\/test\/player\/(Main|PlayerShell)\.swf/i,
+                        'find': /^http:\/\/tv\.sohu\.com\/upload\/swf\/live\/\d+\/(Main|PlayerShell)\.swf|61\.135\.176\.223:8080\/test\/player\/(Main|PlayerShell)\.swf/i,
                         'replace': this.players['sohu_live']
                     },
                     'sohu_out_1': {
@@ -449,6 +449,7 @@ animation-duration:.001s;animation-name:playerInserted;}\
 
 var force_all = true;
 var force_direct_gpu = true;
+var wmodeValue = 'direct';
 var wmodeValue = 'gpu';
 
 setTimeout(function () {
@@ -718,7 +719,7 @@ setTimeout(function () {
 		}, { // sohu_main //sohu反live跨域,需代理,方式:代理服务v.aty.sohu.com,端口80,规则live.tv.sohu.com/crossdomain.xml
 			find: /^http:\/\/tv\.sohu\.com\/upload\/swf(\/p2p(\/yc)?)?\/(sv)?\d+\/Main\.swf/i,
 			replace: function(el, find) {
-				var url = document.location.host.match(/live.tv.sohu.com/) ? 'http://qtxmd.googlecode.com/svn/swfplayer/sohu.swf' : 'http://qtxmd.googlecode.com/svn/swfplayer/sohu_live.swf';
+				var url = document.location.host.match(/live.tv.sohu.com/) ? 'http://qtxmd.googlecode.com/svn/swfplayer/sohu_live.swf' : 'http://qtxmd.googlecode.com/svn/swfplayer/sohu.swf';
 				this.Reload.bind(this, el, find, this.host + url)();
 			}
 		}, { // sohu_playershell
@@ -728,7 +729,7 @@ setTimeout(function () {
 			find: /^http:\/\/220\.181\.90\.161\/webplayer\/(Main|PlayerShell)\.swf/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/sohu_live.swf'
 		}, { // sohu_live //sohu直播反live跨域,需代理,方式:代理服务v.aty.sohu.com,端口80,规则live.tv.sohu.com/crossdomain.xml
-			find: /^http:\/\/61\.135\.176\.223:8080\/test\/player\/(Main|PlayerShell)\.swf/i,
+			find: /^http:\/\/tv\.sohu\.com\/upload\/swf\/live\/\d+\/(Main|PlayerShell)\.swf|61\.135\.176\.223:8080\/test\/player\/(Main|PlayerShell)\.swf/i,
 			replace: 'http://qtxmd.googlecode.com/svn/swfplayer/sohu_live.swf'
 		}, { // sohu_out_1
 			find: /^http:\/\/share\.vrs\.sohu\.com\/.*\/v.swf.*(&id=\d+)/i,

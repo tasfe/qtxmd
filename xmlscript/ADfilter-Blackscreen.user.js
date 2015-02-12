@@ -282,7 +282,7 @@
                         'replace': this.players['sohu_live']
                     },
                     'sohu_live': {
-                        'find': /^http:\/\/61\.135\.176\.223:8080\/test\/player\/(Main|PlayerShell)\.swf/i,
+                        'find': /^http:\/\/tv\.sohu\.com\/upload\/swf\/live\/\d+\/(Main|PlayerShell)\.swf|61\.135\.176\.223:8080\/test\/player\/(Main|PlayerShell)\.swf/i,
                         'replace': this.players['sohu_live']
                     },
                     'sohu_out_1': {
