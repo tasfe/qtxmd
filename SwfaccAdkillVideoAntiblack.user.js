@@ -3,7 +3,7 @@
 // @namespace   Qingtian
 // @author   Qingtian
 // @description   SwfaccAdkillVideoAntiblack
-// @version   2.0.0Nightly+2015.02.18pre
+// @version   2.0.0Nightly+2015.02.20pre
 // @icon   http://code.google.com/p/qtxmd/logo?cct=1391043764
 // @charset   utf-8
 // @downloadURL   http://qtxmd.googlecode.com/svn/SwfaccAdkillVideoAntiblack.user.js
@@ -447,10 +447,10 @@ animation-duration:.001s;animation-name:playerInserted;}\
     new ADfilterBlackscreen().init();
 })();
 
+var wmodeValue = 'gpu';
 var force_all = true;
 var force_direct_gpu = true;
 var wmodeValue = 'direct';
-var wmodeValue = 'gpu';
 
 setTimeout(function () {
   var objects = document.getElementsByTagName('object');
@@ -573,6 +573,9 @@ setTimeout(function () {
 						checkHtml5(html5Array);
 						break;
 					case 'innerIframe':
+						var innerIframeArray = parent.getElementsByTagName('innerIframe');
+						checkInnerIframe(innerIframeArray);
+						break;
 					case 'iframe':
 						var iframeArray = parent.getElementsByTagName('iframe');
 						checkIframe(iframeArray);
