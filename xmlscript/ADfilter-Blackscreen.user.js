@@ -3,7 +3,7 @@
 // @namespace   Qingtian
 // @author   Qingtian
 // @description   ADfilter-Blackscreen
-// @version   1.7.1Beta+2015.02.13pre
+// @version   1.7.1Beta+2015.03.13pre
 // @icon   http://code.google.com/p/qtxmd/logo?cct=1391043764
 // @charset   utf-8
 // @downloadURL   http://qtxmd.googlecode.com/svn/xmlscript/ADfilter-Blackscreen.user.js
@@ -16,7 +16,7 @@
 // @run-at   document-idle
 // @updateURL   https://qtxmd.googlecode.com/svn/xmlscript/ADfilter-Blackscreen.user.js
 // @视频反跨域,需使用代理;方式:代理服务flvr.pandora.tv端口80;通用规则*/crossdomain.xml
-// @优酷源修复代理,需使用代理;方式:代理服务202.102.81.130端口80;代理规则f.youku.com或本地hosts文件添加202.102.81.130 f.youku.com
+// @优酷源修复代理,需使用代理;方式:代理服务202.102.81.130端口80;代理规则f.youku.com或本地hosts文件添加202.102.81.130 f.youku.com (Has expired)
 // ==/UserScript==
 
 (function() {
